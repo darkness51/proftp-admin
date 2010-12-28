@@ -6,7 +6,7 @@ class Usuario(models.Model):
     userid = models.CharField(max_length=32)
     password = models.CharField(max_length=45)
     uid = models.SmallIntegerField(default=5500)
-    guid = models.SmallIntegerField(default=5500)
+    gid = models.SmallIntegerField(default=5500)
     homedir = models.CharField(max_length=255)
     shell = models.CharField(max_length=20, default="/sbin/nologin")
     count = models.IntegerField(default=0)
