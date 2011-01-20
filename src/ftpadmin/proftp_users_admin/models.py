@@ -37,7 +37,7 @@ class Group(models.Model):
     def __unicode__(self):
         return unicode(self.group_name)
     
-class Quota_Limits(models.Model):
+class Quota_Limit(models.Model):
     '''
     Tabla con los limites de quota por usuario
     '''
@@ -67,7 +67,7 @@ class Quota_Limits(models.Model):
     bytes_out_avail = models.FloatField(default=0)
     bytes_xfer_avail = models.FloatField(default=0)
     files_in_avail = models.IntegerField(default=0)
-    files_on_avail = models.IntegerField(default=0)
+    files_out_avail = models.IntegerField(default=0)
     files_xfer_avail = models.IntegerField(default=0)
     
     def __unicode__(self):
