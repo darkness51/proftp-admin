@@ -72,3 +72,27 @@ class Quota_Limit(models.Model):
     
     def __unicode__(self):
         return unicode(self.name)
+    
+class Quota_Tally(models.Model):
+    '''
+    Tabla con los datos sobre las cuotas
+    '''
+    
+    ENUM = (
+        (u'user', u'Usuario'),
+        (u'group', u'Grupo'),
+        (u'class', u'Clase'),
+        (u'all', u'Todos'),
+    )
+    
+    name = models.CharField(max_length=30)
+    quota_type = models.CharField(max_length=7, choices=ENUM, default="user")
+    bytes_in_avail = models.FloatField(default=0)
+    bytes_out_avail = models.FloatField(default=0)
+    bytes_xfer_avail = models.FloatField(default=0)
+    files_in_avail = models.IntegerField(default=0)
+    files_out_avail = models.IntegerField(default=0)
+    files_xfer_avail = models.IntegerField(default=0)
+    
+    def __unicode__(self):
+        return unicode(self.name)
