@@ -1,4 +1,4 @@
-from models import Usuario, Group, Quota_Limits
+from models import Usuario, Group, Quota_Limit
 from django.contrib import admin
 
 class UsuarioAdmin(admin.ModelAdmin):
@@ -7,4 +7,4 @@ class UsuarioAdmin(admin.ModelAdmin):
 
 admin.site.register(Usuario, UsuarioAdmin)
 admin.site.register(Group)
-admin.site.register(Quota_Limits)
+admin.site.register(Quota_Limit)
