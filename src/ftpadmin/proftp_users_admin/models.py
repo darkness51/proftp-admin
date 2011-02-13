@@ -1,5 +1,5 @@
 from django.db import models
-import hashlib, base64
+import hashlib, base64, re
 
 # Create your models here.
 class Usuario(models.Model):
@@ -20,7 +20,9 @@ class Usuario(models.Model):
         '''
         Encripta el password en formato md5
         '''
-        self.password = "{md5}"+base64.b64encode(hashlib.md5(self.password).digest())
+        search = re.search("{md5}", self.password)
+        if not search:
+            self.password = "{md5}"+base64.b64encode(hashlib.md5(self.password).digest())
         
     def save(self, *args, **kargs):
         '''
