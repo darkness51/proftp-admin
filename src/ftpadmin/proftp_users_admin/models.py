@@ -1,5 +1,7 @@
+import hashlib
+import base64
+import re
 from django.db import models
-import hashlib, base64, re
 
 # Create your models here.
 class Usuario(models.Model):
